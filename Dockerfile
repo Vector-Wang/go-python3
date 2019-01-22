@@ -5,4 +5,5 @@ ENV GOPATH /go
 COPY / $GOPATH/src/
 
 WORKDIR $GOPATH/src/
-RUN go get
+RUN export GOPATH=$GOPATH \
+    && go get
